@@ -12,16 +12,16 @@ type SceneSessionData = {
 
 type SceneContext<C extends Context = Context> = C & { scene: ContextScene } & SessionFlavor<SceneSessionData>;
 
-type EntryExitFunction = <C extends SceneContext = SceneContext>(ctx: C) => void;
+type EntryExitFunction<C extends SceneContext = SceneContext> = (ctx: C) => void;
 
 const scenes = new Set<string>();
-const sceneEntries = new Map<string, EntryExitFunction>();
-const sceneExits = new Map<string, EntryExitFunction>();
+const sceneEntries = new Map<string, EntryExitFunction<any>>();
+const sceneExits = new Map<string, EntryExitFunction<any>>();
 
 const createScene = <C extends SceneContext = SceneContext>(
   scene: string,
-  onEntry?: EntryExitFunction,
-  onExit?: EntryExitFunction,
+  onEntry?: EntryExitFunction<C>,
+  onExit?: EntryExitFunction<C>,
 ) => {
   if (scenes.has(scene)) {
     throw new Error(`Scene ${scene} already exists. Refusing to register.`);
