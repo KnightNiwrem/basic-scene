@@ -1,0 +1,43 @@
+{
+  "name": "basic-scene",
+  "version": "0.1.0",
+  "description": "A basic scene for grammyjs",
+  "author": "KnightNiwrem",
+  "license": "MIT",
+  "main": "dist/mod.js",
+  "types": "dist/mod.d.ts",
+  "engines": {
+    "node": "^12.20.0 || >=14.13.1"
+  },
+  "homepage": "https://github.com/KnightNiwrem/basic-scene",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KnightNiwrem/basic-scene.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KnightNiwrem/basic-scene/issues"
+  },
+  "scripts": {
+    "build": "deno2node tsconfig.json"
+  },
+  "devDependencies": {
+    "@tsconfig/node12": "^1.0.9",
+    "@types/debug": "^4.1.7",
+    "@types/node-fetch": "^3.0.3",
+    "deno2node": "^1.0.0",
+    "grammy": "^1.0.0",
+    "typescript": "^4.4.3"
+  },
+  "peerDependencies": {
+    "grammy": "^1.0.0"
+  },
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "bot",
+    "grammy",
+    "scene",
+    "middleware"
+  ]
+}
